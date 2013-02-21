@@ -1,0 +1,11 @@
+[Unit]
+Description="Systemd wrapper for launching persistent Virtual Box instances"
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/usr/local/bin/vboxautorun
+ExecStop=/usr/local/bin/vboxsuspend
+
+[Install]
+WantedBy=multi-user.target
